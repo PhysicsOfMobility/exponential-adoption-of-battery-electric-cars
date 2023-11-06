@@ -1,6 +1,6 @@
 # Exponential adoption of battery electric cars
 
-This repository contains the code necessary to reproduce the figures in the article **Exponential adoption of battery electric cars** by Felix Jung, Malte Schröder and Marc Timme.
+This contains the code necessary to reproduce the figures in the article **Exponential adoption of battery electric cars** by Felix Jung, Malte Schröder and Marc Timme.
 
 **Important note**: For copyright reasons, this repository contains only dummy data. To reproduce the actual plots from the paper, you must first acquire the actual data from the various sources provided in the manuscript.
 
