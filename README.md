@@ -8,6 +8,8 @@ This contains the code necessary to reproduce the figures in the article **Expon
 
 ### Prerequisites
 
+- [pdf2ps](https://linux.die.net/man/1/pdf2ps)
+- [ps2eps](https://linux.die.net/man/1/ps2eps)
 - Python 3.10 with `pip`
 - git
 
@@ -26,4 +28,4 @@ Run
 jupyter lab
 ```
 
-Then, in JupyterLab, navigate to the cloned repository, enter the "notebooks" folder, right-click on `manuscript_figures.py` and select "Open With > Notebook". Then, run and explore the notebook. 
+Then, in JupyterLab, navigate to the cloned repository, enter the "notebooks" folder, right-click on `manuscript_figures.py` and select "Open With > Notebook". Then, run and explore the notebook.

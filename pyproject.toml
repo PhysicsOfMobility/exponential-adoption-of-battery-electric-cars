@@ -26,6 +26,7 @@ dependencies = [
     "jupyterlab",
     "jupytext",
     "fxutil @ git+https://github.com/fxjung/fxutil",
+    "uncertainties",
 ]
 
 [project.optional-dependencies]
@@ -38,6 +39,13 @@ dev = [
 [project.urls]
 repository = "https://github.com/PhysicsOfMobility/exponential-adoption-of-battery-electric-cars"
 
+[tool.setuptools]
+zip-safe = false
+include-package-data = false
+py-modules = []
+
+[tool.setuptools.packages.find]
+where = ["notebooks"]
 
 [tool.black]
 line-length = 88

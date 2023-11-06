@@ -1,3 +1,7 @@
+*.ipynb
+*.idea
+data
+
 # Created by https://www.toptal.com/developers/gitignore/api/vim,jupyternotebooks,python
 # Edit at https://www.toptal.com/developers/gitignore?templates=vim,jupyternotebooks,python
 
