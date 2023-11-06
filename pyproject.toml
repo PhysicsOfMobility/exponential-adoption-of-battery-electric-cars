@@ -24,6 +24,8 @@ classifiers = [
 ]
 dependencies = [
     "jupyterlab",
+    "jupytext",
+    "fxutil @ git+https://github.com/fxjung/fxutil",
 ]
 
 [project.optional-dependencies]
