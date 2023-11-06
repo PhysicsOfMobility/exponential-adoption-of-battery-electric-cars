@@ -1,0 +1,64 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "exponential-adoption-of-battery-electric-cars"
+version = "0.1"
+authors = [
+    { name = "Felix Jung", email = "felix.jung@tu-dresden.de" },
+]
+maintainers = [
+    { name = "Felix Jung", email = "felix.jung@tu-dresden.de" },
+]
+description = """This contains the code necessary to reproduce the figures in
+the article Exponential adoption of battery electric cars by Felix Jung, Malte Schröder
+and Marc Timme."""
+keywords = ["physics", "science", "data analysis", "battery electric cars"]
+readme = "README.md"
+requires-python=">=3.10"
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3.10",
+]
+dependencies = [
+    "jupyterlab",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black == 23.10.1",
+    "pytest",
+    "check-manifest",
+]
+
+[project.urls]
+repository = "https://github.com/PhysicsOfMobility/exponential-adoption-of-battery-electric-cars"
+
+
+[tool.black]
+line-length = 88
+target-version = ['py310']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | _deps
+  | buck-out
+  | build
+  | dist
+  | googletest
+)/
+'''
+
+# NOTE: you have to use single-quoted strings in TOML for regular expressions.
+# It's the equivalent of r-strings in Python.  Multiline strings are treated as
+# verbose regular expressions by Black.  Use [ ] to denote a significant space
+# character.
