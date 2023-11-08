@@ -8,10 +8,10 @@ This contains the code necessary to reproduce the figures in the article **Expon
 
 ### Prerequisites
 
+- git
+- Python 3.10 with `pip`
 - [pdf2ps](https://linux.die.net/man/1/pdf2ps)
 - [ps2eps](https://linux.die.net/man/1/ps2eps)
-- Python 3.10 with `pip`
-- git
 
 ### Setup
 
