@@ -31,23 +31,35 @@
 #
 # **[IEA](https://www.iea.org/data-and-statistics/data-product/global-ev-outlook-2023)**
 #
-# The dataset (GEVO 2022) used for the manuscript is not available anymore on the IEA's website. Instead, you may use the 2023 one:
+# The dataset (GEVO 2022) used for the manuscript is not available anymore on the IEA's website. Instead, you may use the 2023 one.
 #
 # Procedure to retrieve the data:
 #
 # - Select "Global EV Data" > "EV data by country" > "CSV"
 # - Store the file as `data/raw/IEA/23/IEA-EV-data.csv`
 #
+# Unfortunately, the currently available version of the IEA data is incompatible with this notebook and may thus require some modification of the code.
 #
 # **[Eurostat](https://ec.europa.eu/eurostat/databrowser/view/ROAD_EQS_CARPDA__custom_2967363/default/table?lang=en)**
 #
-# Procedure to retrieve the data:
+# Procedure to retrieve the passenger car data:
 #
 # - Select "Download" > "Full dataset \[road_eqs_carpda\]" > "SDMX-CSV 1.0"
 # - Store file as `data/raw/eurostat/22/road_eqs_carpda_linear.csv.gz`
 # - Unzip the file
 #    - `cd data/raw/eurostat/22/`
 #    - `gunzip road_eqs_carpda_linear.csv.gz`
+#
+# In addition, you need to retrieve the GEO code list [here](https://ec.europa.eu/eurostat/databrowser/bulk?lang=en&selectedTab=codeList).
+#
+# - Select "G"
+# - Look for the code "GEO"
+# - Select "tsv" and store the file as `data/raw/eurostat/22/geo_en.dic.gz`
+# - Unzip the file
+#    - `cd data/raw/eurostat/22/`
+#    - `gunzip geo_en.dic.gz`
+#
+# Unfortunately, the currently available version of the Eurostat data is incompatible with this notebook and may thus require some modification of the code.
 #
 # **[FHWA](https://www.fhwa.dot.gov/policyinformation/statistics.cfm)**
 #
