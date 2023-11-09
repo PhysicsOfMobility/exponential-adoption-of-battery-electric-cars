@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/715070348.svg)](https://zenodo.org/doi/10.5281/zenodo.10091434)
+
 # Exponential adoption of battery electric cars
 
 This contains the code necessary to reproduce the figures in the article **Exponential adoption of battery electric cars** by Felix Jung, Malte Schröder and Marc Timme.
