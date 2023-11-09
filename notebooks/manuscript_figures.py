@@ -2329,27 +2329,51 @@ mean_annual_growth.describe()
 
 # ### Historic peak sales values comparison
 
-# Peak values according to [CEIC Data](https://www.ceicdata.com/en/indicator/united-states/motor-vehicle-sales-passenger-cars) for the USA and [GoodCarBadCar](https://www.goodcarbadcar.net/greece-car-sales-data/) for all other regions.
+# Peak and minimum values according to [CEIC Data](https://www.ceicdata.com/en/indicator/united-states/motor-vehicle-sales-passenger-cars) for the USA and [GoodCarBadCar](https://www.goodcarbadcar.net/greece-car-sales-data/) for all other regions.
+#
+# US Data from 2005, rest of the world from 1990.
 
 peak_values_by_region = pd.Series(
     {
-        "Belgium": 636e3,
-        "Denmark": 260e3,
-        "Finland": 148e3,
-        "France": 2.3e6,
-        "Germany": 4.2e6,
-        "Greece": 290e3,
-        "Iceland": 20e3,
-        "Italy": 2.5e6,
-        "Netherlands": 611e3,
-        "Norway": 176e3,
-        "Poland": 556e3,
-        "Portugal": 277e3,
-        "Spain": 1.6e6,
-        "Sweden": 435e3,
-        "Switzerland": 380e3,
-        "United Kingdom": 2.7e6,
+        "Belgium": 572_211,
+        "Denmark": 225_581,
+        "Finland": 148_161,
+        "France": 2_309_130,
+        "Germany": 4_158_674,
+        "Greece": 290_222,
+        "Iceland": 21_324,
+        "Italy": 2_494_115,
+        "Netherlands": 611_486,
+        "Norway": 176_276,
+        "Poland": 555_598,
+        "Portugal": 276_972,
+        "Spain": 1_634_608,
+        "Sweden": 434_783,
+        "Switzerland": 379_393,
+        "United Kingdom": 2_692_786,
         "USA": 7_761_592,
+    }
+)
+
+min_values_by_region = pd.Series(
+    {
+        "Belgium": 358_686,
+        "Denmark": 80_654,
+        "Finland": 55_836,
+        "France": 1_532_035,
+        "Germany": 2_622_132,
+        "Greece": 58_482,
+        "Iceland": 2_113,
+        "Italy": 1_304_648,
+        "Netherlands": 313_609,
+        "Norway": 54_254,
+        "Poland": 235_522,
+        "Portugal": 95_309,
+        "Spain": 699_589,
+        "Sweden": 124_343,
+        "Switzerland": 213_408,
+        "United Kingdom": 1_614_063,
+        "USA": 1_839_092,
     }
 )
 
@@ -2402,6 +2426,8 @@ df.sort_index(axis=1, inplace=True)
 
 df[("factor", "bass")].sort_values()
 
+peak_values_by_region / min_values_by_region
 
+(peak_values_by_region / min_values_by_region).mean()
 
 
