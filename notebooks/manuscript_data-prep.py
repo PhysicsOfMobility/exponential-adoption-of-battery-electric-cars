@@ -178,8 +178,8 @@ regions.fillna(False, inplace=True)
 # ### IEA 
 # https://www.iea.org/data-and-statistics/data-product/global-ev-outlook-2022#data-sets
 
-# iea_dir = input_dir / "IEA" / "22"  # if using the GEVO 2022 dataset
-iea_dir = input_dir / "IEA" / "23"  # if using the GEVO 2023 dataset
+iea_dir = input_dir / "IEA" / "22"  # if using the GEVO 2022 dataset
+# iea_dir = input_dir / "IEA" / "23"  # if using the GEVO 2023 dataset
 
 iea_df = pd.read_csv(iea_dir / "IEA-EV-data.csv")
 

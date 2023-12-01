@@ -6,7 +6,7 @@
 #       extension: .py
 #       format_name: light
 #       format_version: '1.5'
-#       jupytext_version: 1.14.5
+#       jupytext_version: 1.15.2
 #   kernelspec:
 #     display_name: Python (gendev)
 #     language: python
@@ -81,7 +81,7 @@ label_BEC = "BEC"
 label_PC = "Total PC"
 label_BEC_stock = "BEC fleet size"
 label_BEC_share = "BEC fraction"
-label_BEC_share_percent = r"BEC fraction [$\%$]"
+label_BEC_share_percent = r"BEC fraction $/\%$"
 
 model_colors_dict = {"exp": "C7", "log": "C5", "bass": "C3"}
 model_labels_dict = {"exp": "Exponential", "log": "Logistic", "bass": "Bass"}
@@ -1106,6 +1106,12 @@ plot_world_adoption(ax)
 
 fpath = plot_dir / "worldwide exponential bec adoption.pdf".replace(" ", "-")
 fig.savefig(fpath, dpi=fig_dpi)
+fig.savefig(
+    fpath.parent / "Fig1.tif",
+    dpi=600,
+    format="tiff",
+    pil_kwargs={"compression": "tiff_lzw"},
+)
 alt_fpath = fpath.parent / "figure-1.pdf"
 if not alt_fpath.exists():
     alt_fpath.symlink_to(fpath)
@@ -1392,6 +1398,12 @@ ax.yaxis.set_minor_locator(mpl.ticker.MultipleLocator(1))
 
 fpath = plot_dir / "adoption fraction curves data.pdf".replace(" ", "-")
 fig.savefig(fpath, dpi=fig_dpi)
+fig.savefig(
+    fpath.parent / "Fig2.tif",
+    dpi=600,
+    format="tiff",
+    pil_kwargs={"compression": "tiff_lzw"},
+)
 alt_fpath = fpath.parent / "figure-2.pdf"
 if not alt_fpath.exists():
     alt_fpath.symlink_to(fpath)
@@ -1530,6 +1542,13 @@ plot_intersection_construction(
 
 fpath = plot_dir / "intersection construction germany.pdf".replace(" ", "-")
 fig.savefig(fpath, dpi=fig_dpi)
+fig.savefig(
+    fpath.parent / "Fig3.tif",
+    dpi=600,
+    format="tiff",
+    pil_kwargs={"compression": "tiff_lzw"},
+)
+
 alt_fpath = fpath.parent / "figure-3.pdf"
 if not alt_fpath.exists():
     alt_fpath.symlink_to(fpath)
@@ -1561,11 +1580,13 @@ gs = mpl.gridspec.GridSpec(
 axs = [fig.add_subplot(gs) for gs in gs]
 
 panel_1_label = axs[0].text(
-    0.10, 1.05, r"\textbf{(a)}", transform=axs[0].transAxes, ha="right", va="bottom"
+    # 0.10, 1.05, r"\textbf{(a)}", transform=axs[0].transAxes, ha="right", va="bottom"
+    0.05, 1.05, r"\textbf{A}", transform=axs[0].transAxes, ha="right", va="bottom"
 )
 
 panel_2_label = axs[1].text(
-    0.10, 1.05, r"\textbf{(b)}", transform=axs[1].transAxes, ha="right", va="bottom"
+    # 0.10, 1.05, r"\textbf{(b)}", transform=axs[1].transAxes, ha="right", va="bottom"
+    0.05, 1.05, r"\textbf{B}", transform=axs[1].transAxes, ha="right", va="bottom"
 )
 plot_models_region_comparison_super_regions(
     ax=axs[0],
@@ -1644,6 +1665,12 @@ axs[1].set_title(model_labels_dict["bass"])
 fpath = plot_dir / "adoption fraction curves log bass.pdf".replace(" ", "-")
 fig.savefig(fpath, dpi=fig_dpi)
 alt_fpath = fpath.parent / "figure-4.pdf"
+fig.savefig(
+    fpath.parent / "Fig4.tif",
+    dpi=600,
+    format="tiff",
+    pil_kwargs={"compression": "tiff_lzw"},
+)
 if not alt_fpath.exists():
     alt_fpath.symlink_to(fpath)
 
@@ -1814,7 +1841,7 @@ def plot_dominance_estimate_comparison_chart(
     ax.grid(True, axis="x", which="major", lw=0.9, zorder=0)
 
     ax.grid(True, axis="y", which="major", lw=0.3, zorder=0)
-    ax.set_xlabel("year")
+    ax.set_xlabel("Year")
 
     handles, labels = ax.get_legend_handles_labels()
     legend_dict = {
@@ -1870,6 +1897,12 @@ plot_dominance_estimate_comparison_chart(
 
 fpath = plot_dir / "comparison of exp log bass models for europe.pdf".replace(" ", "-")
 fig.savefig(fpath, dpi=fig_dpi)
+fig.savefig(
+    fpath.parent / "Fig5.tif",
+    dpi=600,
+    format="tiff",
+    pil_kwargs={"compression": "tiff_lzw"},
+)
 alt_fpath = fpath.parent / "figure-5.pdf"
 if not alt_fpath.exists():
     alt_fpath.symlink_to(fpath)
@@ -1958,11 +1991,13 @@ gs = mpl.gridspec.GridSpec(
 axs = [fig.add_subplot(gs) for gs in gs]
 
 panel_1_label = axs[0].text(
-    0.10, 1.05, r"\textbf{(a)}", transform=axs[0].transAxes, ha="right", va="bottom"
+    # 0.10, 1.05, r"\textbf{(a)}", transform=axs[0].transAxes, ha="right", va="bottom"
+    0.05, 1.05, r"\textbf{A}", transform=axs[0].transAxes, ha="right", va="bottom"
 )
 
 panel_2_label = axs[1].text(
-    0.10, 1.05, r"\textbf{(b)}", transform=axs[1].transAxes, ha="right", va="bottom"
+    # 0.10, 1.05, r"\textbf{(b)}", transform=axs[1].transAxes, ha="right", va="bottom"
+    0.05, 1.05, r"\textbf{B}", transform=axs[1].transAxes, ha="right", va="bottom"
 )
 
 plot_bec_fraction_hist(ax=axs[0])
@@ -1973,11 +2008,11 @@ axs[1].yaxis.set_tick_params(left=False, labelleft=False)
 
 axs[0].set_xscale("log")
 axs[0].set_xlim(0.094, 56)
-axs[0].set_xlabel(r"BEC fraction $[\%]$")
+axs[0].set_xlabel(r"BEC fraction $/\%$")
 axs[0].set_ylabel(r"Number of countries")
 
 axs[1].set_xlim(0, 1)
-axs[1].set_xlabel(r"Exponential growth rate $a$")
+axs[1].set_xlabel(r"Exponential growth rate $a/\mathrm{yr}^{-1}$")
 axs[1].xaxis.set_minor_locator(mpl.ticker.MultipleLocator(0.1))
 axs[1].xaxis.set_major_locator(mpl.ticker.MultipleLocator(0.2))
 
@@ -1990,10 +2025,18 @@ axs[0].set_xticks(ticks=xticks, labels=[f"{x:g}" for x in xticks])
 
 fpath = plot_dir / "bec fraction and growth rate distributions.pdf".replace(" ", "-")
 fig.savefig(fpath, dpi=fig_dpi)
+fig.savefig(
+    fpath.parent / "Fig6.tif",
+    dpi=600,
+    format="tiff",
+    pil_kwargs={"compression": "tiff_lzw"},
+)
 alt_fpath = fpath.parent / "figure-6.pdf"
 if not alt_fpath.exists():
     alt_fpath.symlink_to(fpath)
 # -
+
+
 # ## Convert figures to EPS format
 
 for pdf_path in tqdm(sorted(plot_dir.glob("figure-*.pdf"))):
@@ -2266,7 +2309,7 @@ def create_table_transition_times(regions, return_df=False):
             res_dict[region][
                 (
                     model_header,
-                    rf"$\thalf^{{(\mathrm{{{model_type}}})}}\,[\mathrm{{a}}]$",
+                    rf"$\thalf^{{(\mathrm{{{model_type}}})}}/\mathrm{{a}}]$",
                 )
             ] = f"${nom:.0f}$"
 
